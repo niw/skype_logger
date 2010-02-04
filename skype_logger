@@ -1,0 +1,7 @@
+#!/usr/bin/ruby -Ku
+
+logger = File.expand_path(File.dirname(__FILE__)) + "/lib/logger.rb"
+pid = fork do
+  Kernel.exec(logger, *ARGV)
+end
+puts pid
