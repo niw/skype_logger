@@ -1,4 +1,5 @@
-#!/usr/bin/ruby -Ku
+#!/usr/bin/arch -i386 /usr/bin/ruby -Ku
+# vim:set ft=ruby
 
 require 'osx/cocoa'
 require 'logger'
