@@ -77,7 +77,7 @@ class SkypeLogger < NSObject
 
   def logger
     @logger ||= begin
-      logger = Logger.new(File.expand_path(OPTIONS[:logfile]) || STDOUT)
+      logger = Logger.new(OPTIONS[:logfile] ? File.expand_path(OPTIONS[:logfile]) : STDOUT)
       logger.formatter = SimpleFormatter.new
       logger.level = OPTIONS[:verbose] ? Logger::DEBUG : Logger::INFO
       logger
