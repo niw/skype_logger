@@ -1,6 +1,6 @@
 #!/usr/bin/ruby -Ku
 
-logger = File.expand_path(File.dirname(__FILE__)) + "/lib/logger.rb"
+logger = File.expand_path(File.dirname(__FILE__)) + "/lib/skype_logger.rb"
 pid = fork do
   Kernel.exec(logger, *ARGV)
 end
