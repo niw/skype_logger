@@ -1,0 +1,4 @@
+/build
+*.pbxuser
+*.perspective*
+*.mode*v3
