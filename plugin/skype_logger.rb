@@ -48,6 +48,8 @@ begin
     OSX::SkypeAPI.disconnect
   end
 
+  sleep(3);
+
   OSX::SkypeAPI.setSkypeDelegate client
   OSX::SkypeAPI.connect
 rescue Object => e
