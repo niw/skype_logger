@@ -13,11 +13,11 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>0.1.1</string>
 	<key>CFBundleIdentifier</key>
 	<string>at.niw.SkypeLogger</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.1.1</string>
 	<key>NSPrincipalClass</key>
 	<string>SkypeLoggerLoader</string>
 	<key>SIMBLTargetApplications</key>
@@ -26,7 +26,7 @@
 			<key>BundleIdentifier</key>
 			<string>com.skype.skype</string>
 			<key>MaxBundleVersion</key>
-			<string>5.0.0.6378</string>
+			<string>5.2.0.1523</string>
 			<key>MinBundleVersion</key>
 			<string>2.8.0.851</string>
 		</dict>
