@@ -7,24 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5436DCA31169D1C300344616 /* client.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5436DCA21169D1C300344616 /* client.rb */; };
-		5480E7D91176EB5D00C5BB57 /* formatter.rb in Resources */ = {isa = PBXBuildFile; fileRef = 5480E7D81176EB5D00C5BB57 /* formatter.rb */; };
+		546E858C13E5F48C00D4152D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		548730BF1169B4FA00CF6EFC /* SkypeLoggerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5487309C1169B31300CF6EFC /* SkypeLoggerLoader.m */; };
-		548730CE1169B57000CF6EFC /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548730CD1169B57000CF6EFC /* RubyCocoa.framework */; };
-		54D751961169B6D5004EB865 /* skype_logger.rb in Resources */ = {isa = PBXBuildFile; fileRef = E8F5E25803AEB7C803A81C6F /* skype_logger.rb */; };
+		549E6BF713E7E6D600218385 /* skype_logger.rb in Resources */ = {isa = PBXBuildFile; fileRef = 546E858513E5F27500D4152D /* skype_logger.rb */; };
+		549E6BF913E7E6F700218385 /* client.rb in CopyFiles */ = {isa = PBXBuildFile; fileRef = 546E858313E5F27500D4152D /* client.rb */; };
+		549E6BFA13E7E6F900218385 /* formatter.rb in CopyFiles */ = {isa = PBXBuildFile; fileRef = 546E858413E5F27500D4152D /* formatter.rb */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		549E6BF813E7E6E000218385 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = skype_logger;
+			dstSubfolderSpec = 7;
+			files = (
+				549E6BF913E7E6F700218385 /* client.rb in CopyFiles */,
+				549E6BFA13E7E6F900218385 /* formatter.rb in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		4DDCA7110ACC9A6100E082CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5436DCA21169D1C300344616 /* client.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = client.rb; path = ../lib/skype_logger/client.rb; sourceTree = SOURCE_ROOT; };
-		5480E7D81176EB5D00C5BB57 /* formatter.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = formatter.rb; path = ../lib/skype_logger/formatter.rb; sourceTree = SOURCE_ROOT; };
+		546E858313E5F27500D4152D /* client.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = client.rb; sourceTree = "<group>"; };
+		546E858413E5F27500D4152D /* formatter.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = formatter.rb; sourceTree = "<group>"; };
+		546E858513E5F27500D4152D /* skype_logger.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = skype_logger.rb; path = ../lib/skype_logger.rb; sourceTree = "<group>"; };
 		5487309B1169B31300CF6EFC /* SkypeLoggerLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkypeLoggerLoader.h; sourceTree = "<group>"; };
 		5487309C1169B31300CF6EFC /* SkypeLoggerLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkypeLoggerLoader.m; sourceTree = "<group>"; };
 		548730B01169B45400CF6EFC /* SkypeLogger.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkypeLogger.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		548730CD1169B57000CF6EFC /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /System/Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
-		E8F5E25803AEB7C803A81C6F /* skype_logger.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = skype_logger.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				548730CE1169B57000CF6EFC /* RubyCocoa.framework in Frameworks */,
+				546E858C13E5F48C00D4152D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,17 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				548730CD1169B57000CF6EFC /* RubyCocoa.framework */,
 			);
 			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -78,10 +81,8 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				4DDCA7110ACC9A6100E082CE /* Info.plist */,
 			);
 			name = SkypeLogger;
 			sourceTree = "<group>";
@@ -89,27 +90,29 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5480E7D81176EB5D00C5BB57 /* formatter.rb */,
-				5436DCA21169D1C300344616 /* client.rb */,
-				E8F5E25803AEB7C803A81C6F /* skype_logger.rb */,
+				4DDCA7110ACC9A6100E082CE /* Info.plist */,
+				546E858213E5F27500D4152D /* skype_logger */,
+				546E858513E5F27500D4152D /* skype_logger.rb */,
 			);
 			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		546E858213E5F27500D4152D /* skype_logger */ = {
+			isa = PBXGroup;
+			children = (
+				546E858313E5F27500D4152D /* client.rb */,
+				546E858413E5F27500D4152D /* formatter.rb */,
+			);
+			name = skype_logger;
+			path = ../lib/skype_logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +123,7 @@
 			buildConfigurationList = 548730B51169B45400CF6EFC /* Build configuration list for PBXNativeTarget "SkypeLogger" */;
 			buildPhases = (
 				548730AC1169B45400CF6EFC /* Resources */,
+				549E6BF813E7E6E000218385 /* CopyFiles */,
 				548730AD1169B45400CF6EFC /* Sources */,
 				548730AE1169B45400CF6EFC /* Frameworks */,
 				548731671169B5DA00CF6EFC /* ShellScript */,
@@ -162,9 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54D751961169B6D5004EB865 /* skype_logger.rb in Resources */,
-				5436DCA31169D1C300344616 /* client.rb in Resources */,
-				5480E7D91176EB5D00C5BB57 /* formatter.rb in Resources */,
+				549E6BF713E7E6D600218385 /* skype_logger.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,16 +232,8 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SkypeLogger;
 				WRAPPER_EXTENSION = bundle;
@@ -250,20 +244,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SkypeLogger;
 				WRAPPER_EXTENSION = bundle;
