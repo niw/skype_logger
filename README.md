@@ -14,6 +14,4 @@ Known Bugs
 ----------
 
  *  You need to authorize this plugin everytime when you launch Skype.app.
- *  The logger plugin client is working in Skype.app process.
-    It must be unconsidered use of Skype API and I'm not sure what's going in the process itself,
-    it works though.
+ *  The logger plugin client is forked from Skype.app process.
