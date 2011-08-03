@@ -42,14 +42,19 @@
 
 - (void)load
 {
-    pid_t pid = 0;
+    pid_t pid;
+    const char* skypeLoggerPath = [[self skypeLoggerPath] UTF8String];
+    const char* logFilePath = [[self logFilePath] UTF8String];
+
     if((pid = fork()) == 0) {
-        execl("/usr/bin/ruby",
-              "ruby",
-              [[self skypeLoggerPath] UTF8String],
-              "-l",
-              [[self logFilePath] UTF8String],
-              NULL);
+        if(execl("/usr/bin/ruby",
+                 "ruby",
+                 skypeLoggerPath,
+                 "-l",
+                 logFilePath,
+                 NULL) < 0) {
+            exit(1);
+        }
     } else if(pid < 0) {
         NSLog(@"Fail to fork SkypeLogger.");
     } else {
