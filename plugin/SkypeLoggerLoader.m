@@ -47,12 +47,14 @@
     const char* logFilePath = [[self logFilePath] UTF8String];
 
     if((pid = fork()) == 0) {
+        NSLog(@"Running SkypeLogger...");
         if(execl("/usr/bin/ruby",
                  "ruby",
                  skypeLoggerPath,
                  "-l",
                  logFilePath,
                  NULL) < 0) {
+            NSLog(@"Fail to execl, exit.");
             exit(1);
         }
     } else if(pid < 0) {
