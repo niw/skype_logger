@@ -2,12 +2,9 @@
 
 $LOAD_PATH << File.expand_path(File.dirname(__FILE__))
 
-require 'osx/cocoa'
 require 'optparse'
-require 'skype_logger/client'
-require 'skype_logger/formatter'
-
-include SkypeLogger
+require 'osx/cocoa'
+require 'skype_logger/app_delegate'
 
 OPTIONS = {}
 parser = OptionParser.new do |opts|
@@ -25,34 +22,17 @@ parser.parse! ARGV
 
 OSX.require_framework '/Applications/Skype.app/Contents/Frameworks/Skype.framework'
 
-def logger
-  logger = Logger.new(OPTIONS[:logfile] ? File.expand_path(OPTIONS[:logfile]) : STDOUT)
-  logger.formatter = SimpleFormatter.new
-  logger.level = OPTIONS[:verbose] ? Logger::DEBUG : Logger::INFO
-  logger
-end
-
-def disconnect_and_exit
-  OSX::SkypeAPI.disconnect
-  exit
-end
-
-trap('SIGINT')  { disconnect_and_exit }
-trap('SIGTERM') { disconnect_and_exit }
-trap('SIGHUP')  { disconnect_and_exit }
-
 #File.open('/dev/null') do |f|
 #  STDIN.reopen(f)
 #  STDOUT.reopen(f) if OPTIONS[:logfile]
 #  STDERR.reopen(f)
 #end
 
-client = Client.new
-client.logger = logger
-
-OSX::SkypeAPI.setSkypeDelegate client
-OSX::SkypeAPI.connect
-
 app = OSX::NSApplication.sharedApplication
+app.setDelegate(SkypeLogger::AppDelegate.alloc.initWithOptions(OPTIONS))
+[:SIGINT, :SIGTERM, :SIGHUP].each do |signal|
+  trap(signal) do
+    app.terminate(nil)
+  end
+end
 app.run
-disconnect_and_exit
