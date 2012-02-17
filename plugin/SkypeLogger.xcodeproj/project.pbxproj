@@ -12,6 +12,8 @@
 		549E6BF713E7E6D600218385 /* skype_logger.rb in Resources */ = {isa = PBXBuildFile; fileRef = 546E858513E5F27500D4152D /* skype_logger.rb */; };
 		549E6BF913E7E6F700218385 /* client.rb in CopyFiles */ = {isa = PBXBuildFile; fileRef = 546E858313E5F27500D4152D /* client.rb */; };
 		549E6BFA13E7E6F900218385 /* formatter.rb in CopyFiles */ = {isa = PBXBuildFile; fileRef = 546E858413E5F27500D4152D /* formatter.rb */; };
+		54E99C0114EDF40A0092B6FA /* app_delegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 54E99C0014EDF40A0092B6FA /* app_delegate.rb */; };
+		54E99C0214EDF4110092B6FA /* app_delegate.rb in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54E99C0014EDF40A0092B6FA /* app_delegate.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,6 +23,7 @@
 			dstPath = skype_logger;
 			dstSubfolderSpec = 7;
 			files = (
+				54E99C0214EDF4110092B6FA /* app_delegate.rb in CopyFiles */,
 				549E6BF913E7E6F700218385 /* client.rb in CopyFiles */,
 				549E6BFA13E7E6F900218385 /* formatter.rb in CopyFiles */,
 			);
@@ -37,6 +40,7 @@
 		5487309B1169B31300CF6EFC /* SkypeLoggerLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkypeLoggerLoader.h; sourceTree = "<group>"; };
 		5487309C1169B31300CF6EFC /* SkypeLoggerLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkypeLoggerLoader.m; sourceTree = "<group>"; };
 		548730B01169B45400CF6EFC /* SkypeLogger.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkypeLogger.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E99C0014EDF40A0092B6FA /* app_delegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = app_delegate.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		546E858213E5F27500D4152D /* skype_logger */ = {
 			isa = PBXGroup;
 			children = (
+				54E99C0014EDF40A0092B6FA /* app_delegate.rb */,
 				546E858313E5F27500D4152D /* client.rb */,
 				546E858413E5F27500D4152D /* formatter.rb */,
 			);
@@ -167,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				549E6BF713E7E6D600218385 /* skype_logger.rb in Resources */,
+				54E99C0114EDF40A0092B6FA /* app_delegate.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
