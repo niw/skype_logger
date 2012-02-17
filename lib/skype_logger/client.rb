@@ -86,7 +86,7 @@ module SkypeLogger
       end
 
       def on_message(id, key, value)
-        message = (messages[id] ||= {})
+        message = (messages[id] ||= {:id => id})
         case key
         when "CHATNAME"
           message[:chatname] = value
