@@ -23,7 +23,9 @@ module SkypeLogger
     def skypeBecameAvailable(a)
     end
 
-    def skypeAttachResponse
+    addRubyMethod_withType 'skypeAttachResponse:', 'v@:i'
+    def skypeAttachResponse(status)
+      return if status != 1
       command("PROTOCOL 8")
     end
 
