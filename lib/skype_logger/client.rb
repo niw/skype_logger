@@ -11,7 +11,6 @@ module SkypeLogger
     # FIXME make a standarized parser
     def skypeNotificationReceived(a)
       return unless logger
-      logger.debug a.to_s
       case a.to_s
       when /CHATMESSAGE ([0-9]+) STATUS (SENT|RECEIVED)/
         on_message_sent_or_recieve($1)
@@ -32,7 +31,9 @@ module SkypeLogger
     private
 
     def command(cmd)
-      OSX::SkypeAPI.sendSkypeCommand(cmd).to_s
+      res = OSX::SkypeAPI.sendSkypeCommand(cmd).to_s
+      logger.debug("#{cmd}: #{res}")
+      res
     end
 
     def format_message(message)
