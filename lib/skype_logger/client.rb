@@ -15,7 +15,7 @@ module SkypeLogger
       when /CHATMESSAGE ([0-9]+) STATUS (SENT|RECEIVED)/
         on_message_sent_or_recieve($1)
       when /CHATMESSAGE ([0-9]+) ([A-Z_]+) (.*)$/
-        on_message($1, $2, $3)
+        on_message($1, $2, $3) if respond_to? :on_message
       end
     end
 
@@ -43,6 +43,23 @@ module SkypeLogger
       message[:id],
       message[:from],
       message[:body]].join(" ")
+    end
+
+    # This method will be replaced by including
+    # SynchronousSendSkypeCommand or AsynchronousSendSkypeCommand.
+    def on_message_sent_or_recieve(id)
+      handler_module = if command("GET CHATMESSAGE #{id} CHATNAME").empty?
+        logger.debug "Use asynchronous command handler."
+        AsynchronousSendSkypeCommand
+      else
+        logger.debug "Use asynchronous command handler."
+        SynchronousSendSkypeCommand
+      end
+      self.class.class_eval do
+        include handler_module
+        remove_method :on_message_sent_or_recieve
+      end
+      on_message_sent_or_recieve(id)
     end
 
     module SynchronousSendSkypeCommand
@@ -76,7 +93,6 @@ module SkypeLogger
         message
       end
     end
-    #include SynchronousSendSkypeCommand
 
     # Skype Framework 2.8.x seems have a bug which sendSkypeCommand
     # response asynchronously.
@@ -125,6 +141,5 @@ module SkypeLogger
         command("GET CHATMESSAGE #{id} FROM_HANDLE")
       end
     end
-    include AsynchronousSendSkypeCommand
   end
 end
