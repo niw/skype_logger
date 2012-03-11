@@ -53,16 +53,13 @@ module SkypeLogger
 
       private
 
-      # FIXME
       def get_message(id)
         message = {:id => id}
         if /MESSAGE [0-9]+ CHATNAME (.*)$/ === command("GET CHATMESSAGE #{id} CHATNAME")
           message[:chatname] = $1
-          # FIXME
-          message[:chattopic] = "(null)"
-          #if /CHAT .+ TOPIC (.*)$/ === command("GET CHAT #{$1} TOPIC")
-          #  message[:chattopic] = $1 == "(null)" ? "" : $1
-          #end
+          if /CHAT .+ TOPIC (.*)$/ === command("GET CHAT #{$1} TOPIC")
+            message[:chattopic] = $1 == "(null)" ? "" : $1
+          end
         end
         if /MESSAGE [0-9]+ BODY (.*)$/ === command("GET CHATMESSAGE #{id} BODY")
           message[:body] = $1
